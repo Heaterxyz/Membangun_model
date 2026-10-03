@@ -1,0 +1,10 @@
+artifact_location: file:D:/PYTHON/EXPERT/Membangun_model/mlruns/313470838578794118/models/m-93ff1e83c73749eaa13c7dcd3484846e/artifacts
+creation_timestamp: 1790924423346
+experiment_id: '313470838578794118'
+last_updated_timestamp: 1790924430110
+model_id: m-93ff1e83c73749eaa13c7dcd3484846e
+model_type: null
+name: model
+source_run_id: 4275ea9c90474bd9b48d6e75e689564e
+status: 2
+status_message: null

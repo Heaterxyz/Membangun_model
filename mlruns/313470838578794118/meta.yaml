@@ -1,0 +1,9 @@
+artifact_location: file:D:/PYTHON/EXPERT/Membangun_model/mlruns/313470838578794118
+creation_time: 1790924374239
+effective_trace_archival_retention: null
+experiment_id: '313470838578794118'
+last_update_time: 1790924374239
+lifecycle_stage: active
+name: Telco_Churn_Tuning
+trace_location: null
+workspace: default

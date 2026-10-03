@@ -1,0 +1,10 @@
+Classification Report - Random Forest (hasil tuning)
+============================================================
+              precision    recall  f1-score   support
+
+    No Churn     0.8889    0.7899    0.8365      1033
+       Churn     0.5544    0.7258    0.6286       372
+
+    accuracy                         0.7730      1405
+   macro avg     0.7217    0.7579    0.7326      1405
+weighted avg     0.8003    0.7730    0.7815      1405

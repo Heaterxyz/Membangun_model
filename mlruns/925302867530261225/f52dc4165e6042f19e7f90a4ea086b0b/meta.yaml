@@ -1,0 +1,14 @@
+artifact_uri: file:D:/PYTHON/EXPERT/Membangun_model/mlruns/925302867530261225/f52dc4165e6042f19e7f90a4ea086b0b/artifacts
+end_time: 1790924354317
+entry_point_name: ''
+experiment_id: '925302867530261225'
+lifecycle_stage: active
+run_id: f52dc4165e6042f19e7f90a4ea086b0b
+run_name: logistic-regression-autolog
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1790924345923
+status: 3
+tags: []
+user_id: bayu

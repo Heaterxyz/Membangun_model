@@ -1,0 +1,14 @@
+# DagsHub - MLflow Tracking Online (Kriteria 2 Advanced)
+
+1. Buat akun di https://dagshub.com
+2. Buat repository baru, misalnya: Membangun-model
+3. Ganti placeholder di bawah dengan username & nama repo kamu.
+
+MLflow Tracking UI (online):
+https://dagshub.com/<username-dagshub>/<nama-repo-dagshub>.mlflow
+
+Cara menjalankan modelling_tuning.py dengan tracking DagsHub:
+- DAGSHUB_USERNAME=<username-dagshub>
+- DAGSHUB_REPO_NAME=<nama-repo-dagshub>
+- MLFLOW_TRACKING_USERNAME=<username-dagshub>
+- MLFLOW_TRACKING_PASSWORD=<dagshub-token>   # ambil dari DagsHub -> Profile -> Settings -> Access Tokens
