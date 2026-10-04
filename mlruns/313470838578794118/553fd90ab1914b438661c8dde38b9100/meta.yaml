@@ -1,0 +1,14 @@
+artifact_uri: file:D:/PYTHON/EXPERT/Membangun_model/mlruns/313470838578794118/553fd90ab1914b438661c8dde38b9100/artifacts
+end_time: 1791086726155
+entry_point_name: ''
+experiment_id: '313470838578794118'
+lifecycle_stage: active
+run_id: 553fd90ab1914b438661c8dde38b9100
+run_name: random-forest-tuned-manual
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1791086714753
+status: 3
+tags: []
+user_id: Heaterxyz
