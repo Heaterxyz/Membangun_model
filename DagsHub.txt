@@ -1,14 +1,29 @@
 # DagsHub - MLflow Tracking Online (Kriteria 2 Advanced)
 
-1. Buat akun di https://dagshub.com
-2. Buat repository baru, misalnya: Membangun-model
-3. Ganti placeholder di bawah dengan username & nama repo kamu.
+## Akun & Repository
+- Username DagsHub : Heaterxyz
+- Repository       : https://dagshub.com/Heaterxyz/Membangun-model
+- Eksperimen       : Telco_Churn_Tuning
 
-MLflow Tracking UI (online):
-https://dagshub.com/<username-dagshub>/<nama-repo-dagshub>.mlflow
+## MLflow Tracking UI (online) — LINK BUKTI
+https://dagshub.com/Heaterxyz/Membangun-model.mlflow
 
-Cara menjalankan modelling_tuning.py dengan tracking DagsHub:
-- DAGSHUB_USERNAME=<username-dagshub>
-- DAGSHUB_REPO_NAME=<nama-repo-dagshub>
-- MLFLOW_TRACKING_USERNAME=<username-dagshub>
-- MLFLOW_TRACKING_PASSWORD=<dagshub-token>   # ambil dari DagsHub -> Profile -> Settings -> Access Tokens
+Run terbaik (Random Forest tuned, F1 test = 0.6286, ROC-AUC = 0.8409):
+https://dagshub.com/Heaterxyz/Membangun-model.mlflow/#/experiments/0/runs/746306b2446b4955a42f6c8f1bf45b32
+
+Yang ter-log pada run online tersebut:
+- Params   : best params RandomizedSearchCV (n_estimators, max_depth, min_samples_split, dst.)
+- Metrics  : train_accuracy, test_accuracy, precision, recall, f1, roc_auc, best_cv_f1
+- Model    : model tuned + signature + input example (mlflow.sklearn.log_model)
+- Artifacts: confusion_matrix.png, feature_importance.png, classification_report.txt
+
+## Cara menjalankan modelling_tuning.py dengan tracking DagsHub
+```bash
+export DAGSHUB_USERNAME=Heaterxyz
+export DAGSHUB_REPO_NAME=Membangun-model
+export MLFLOW_TRACKING_USERNAME=Heaterxyz
+export MLFLOW_TRACKING_PASSWORD=<dagshub-token>   # DagsHub -> Avatar -> Settings -> Tokens
+
+python modelling_tuning.py
+```
+Catatan Windows: tambahkan `PYTHONUTF8=1` bila muncul error 'charmap' codec.
