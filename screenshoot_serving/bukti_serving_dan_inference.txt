@@ -1,0 +1,31 @@
+=== BUKTI SERVING & INFERENCE — 7 Oktober 2026 (revisi pasca feedback reviewer) ===
+
+Serving model : mlflow models serve -m "models:/m-93ff1e83c73749eaa13c7dcd3484846e" -p 5001 --env-manager local
+Logged model  : m-93ff1e83c73749eaa13c7dcd3484846e (dari run 4275ea9c90474bd9b48d6e75e689564e, experiment Telco_Churn_Tuning)
+Endpoint      : http://127.0.0.1:5001/invocations
+
+BUKTI BERGAMBAR (screenshot, folder ini):
+  1_bukti_mlflow_models_serve_terminal.png    - terminal mlflow models serve + 'Uvicorn running on http://127.0.0.1:5001' + POST 200
+  2_bukti_inference_request_response.png      - POST /invocations -> {"predictions": [1, 0]} HTTP 200 + batch inference
+  3_bukti_serve_access_log_inference.png      - access log serve: deretan POST /invocations 200 OK
+  3_bukti_mlflow_ui_run_list.png              - MLflow UI experiment Telco_Churn_Tuning, tabel Training runs
+  4_bukti_mlflow_ui_run_detail_model.png      - detail run 4275ea9c (Run ID, metrik f1 0.6286, Models)
+  5_bukti_dockerhub_image.png                 - Docker Hub heaterxyz/telco-churn-model (tag latest, 92 pulls)
+
+--- [1] Health check ---
+
+HTTP status: 200
+
+--- [2] POST /invocations (payload 2 baris, dataframe_split) ---
+{"predictions": [1, 0]}
+HTTP status: 200
+
+--- [3] Batch inference (python 7.inference.py --n 3) ---
+Model endpoint : http://127.0.0.1:5001/invocations
+Jumlah request : 3 x 5 baris
+
+Request  1: status=200 latency=   40.6 ms | prediksi=[1, 1, 1, 0, 1] | churn=4/5
+Request  2: status=200 latency=   24.5 ms | prediksi=[1, 0, 0, 0, 1] | churn=2/5
+Request  3: status=200 latency=   22.6 ms | prediksi=[1, 0, 0, 0, 0] | churn=1/5
+
+Selesai. Cek metrik di Prometheus (http://localhost:9090) dan Grafana (http://localhost:3000).
